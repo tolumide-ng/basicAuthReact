@@ -1,4 +1,9 @@
-const { colors, maxWidth, width, height } = require("tailwindcss/defaultTheme");
+const {
+	colors,
+	maxWidth,
+	backgroundColor,
+} = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	theme: {
 		extend: {
@@ -8,6 +13,18 @@ module.exports = {
 			height: {
 				"h-58": "14.6rem",
 			},
+			colors: {
+				gray: {
+					...colors.gray,
+					1100: "#101519",
+					1200: "#3E4246",
+				},
+				orange: {
+					...colors.orange,
+					1100: "#B79A60",
+				},
+			},
+			backgroundColor: { orange: { ...colors.orange, 1200: "#C2A265" } },
 		},
 		maxWidth: {
 			...maxWidth,
