@@ -7,9 +7,10 @@ const InputForm = ({
 	labelname,
 	name,
 	removeBreak,
-	inputType,
+	type,
 	inputClass,
 	labelClass,
+	childRef,
 	errorLabel,
 	value,
 	label = true,
@@ -17,20 +18,25 @@ const InputForm = ({
 }) => (
 	<div className={classes}>
 		{label && (
-			<Label labelname={labelname} name={name} classes={labelClass} />
+			<Label
+				labelname={labelname}
+				name={name[0].toUpperCase() + name.slice(1)}
+				classes={`${labelClass}`}
+			/>
 		)}
 		{removeBreak !== "remove" && <br />}
 		<Input
-			inputType={inputType}
-			name={name}
-			errorLabel={errorLabel}
-			classes={inputClass}
-			value={value}
-			{...rest}
+			props={{
+				type,
+				name,
+				errorLabel,
+				classes: { inputClass },
+				value,
+				...rest,
+			}}
+			ref={childRef}
 		/>
-		{errorLabel && (
-			<p className="mb-3 text-red-300 text-xs">{errorLabel}</p>
-		)}
+		{errorLabel && <p className="text-red-600 text-xs ">{errorLabel}</p>}
 	</div>
 );
 

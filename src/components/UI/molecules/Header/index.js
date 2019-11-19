@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "../../../../images/logo.png";
 import globe from "../../../../images/globe.png";
-// import globe from "../../../../public/globe.png";
+import Image from "../../atoms/Image";
 
 const Header = () => {
 	return (
-		<div className="flex justify-between bg-transparent items-center pt-6 pl-6 pr-4">
+		<div className="flex justify-between bg-transparent items-center pt-6 pl-6 pr-4 mb-8">
 			<div>
-				<img
+				<Image
 					src={logo}
 					alt="Logo of Ariya Digital"
 					className="h-8 w-16"
